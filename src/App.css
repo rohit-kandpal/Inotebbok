@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+/* "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "both": "concurrently \"npm run start\" \"nodemon backend/index.js\"" */

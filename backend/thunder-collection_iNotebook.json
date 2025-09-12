@@ -1,0 +1,134 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "iNotebook",
+    "collectionId": "b0beb0e4-7f7f-46f1-811f-a285b904b057",
+    "dateExported": "2025-07-17T12:10:50.278Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "fb053021-512f-4e60-8337-b5a38e71aad0",
+            "name": "Authentication",
+            "containerId": "",
+            "created": "2025-07-16T05:15:55.453Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "4cea5a41-f142-4472-a330-ba22201e7755",
+            "name": "Notes",
+            "containerId": "",
+            "created": "2025-07-17T06:19:52.139Z",
+            "sortNum": 20000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "7932bbfb-3e64-4395-b4d6-fafb3cf6e412",
+            "colId": "b0beb0e4-7f7f-46f1-811f-a285b904b057",
+            "containerId": "fb053021-512f-4e60-8337-b5a38e71aad0",
+            "name": "Create a new  User",
+            "url": "localhost:5000/api/auth/createuser",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2025-07-16T05:16:31.524Z",
+            "modified": "2025-07-16T09:57:56.218Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n \"name\": \"Boris mehta3\",\n \"email\": \"bmehts3a@gmail.com\",\n \"password\": \"scam2011\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "eab90ec1-fdca-492c-939c-72d0f3e0225c",
+            "colId": "b0beb0e4-7f7f-46f1-811f-a285b904b057",
+            "containerId": "fb053021-512f-4e60-8337-b5a38e71aad0",
+            "name": "User login using creds",
+            "url": "localhost:5000/api/auth/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2025-07-16T10:47:53.083Z",
+            "modified": "2025-07-17T05:30:11.279Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "\n{\n \"email\": \"bmehts3a@gmail.com\",\n \"password\": \"scam2011\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "e3ca2c1d-de7b-4880-ba2f-804449760330",
+            "colId": "b0beb0e4-7f7f-46f1-811f-a285b904b057",
+            "containerId": "fb053021-512f-4e60-8337-b5a38e71aad0",
+            "name": "Get User Data",
+            "url": "localhost:5000/api/auth/getuser",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2025-07-17T06:11:14.620Z",
+            "modified": "2025-07-17T06:18:54.314Z",
+            "headers": [
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjg3Nzc3YTQzZDIyOGZmOTFiYTA0NGFkIn0sImlhdCI6MTc1MjczMDc2OH0.lZnKdtkVHEzm5yY-SMswGpOz01WWLGrmf7hIjZqYWu8"
+                }
+            ]
+        },
+        {
+            "_id": "0853192f-1182-448a-977a-31f92111484f",
+            "colId": "b0beb0e4-7f7f-46f1-811f-a285b904b057",
+            "containerId": "4cea5a41-f142-4472-a330-ba22201e7755",
+            "name": "Fetch All Notes",
+            "url": "localhost:5000/api/notes/fetchallnotes",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2025-07-17T06:31:12.234Z",
+            "modified": "2025-07-17T07:27:26.716Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjg3Nzc3YTQzZDIyOGZmOTFiYTA0NGFkIn0sImlhdCI6MTc1MjczMDc2OH0.lZnKdtkVHEzm5yY-SMswGpOz01WWLGrmf7hIjZqYWu8"
+                }
+            ]
+        },
+        {
+            "_id": "928c248e-6eaa-4f45-83a3-3e8f0a4f067d",
+            "colId": "b0beb0e4-7f7f-46f1-811f-a285b904b057",
+            "containerId": "4cea5a41-f142-4472-a330-ba22201e7755",
+            "name": "Add Note",
+            "url": "localhost:5000/api/notes/addnote",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2025-07-17T09:42:34.785Z",
+            "modified": "2025-07-17T11:38:12.219Z",
+            "headers": [
+                {
+                    "name": "auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjg3Nzc3YTQzZDIyOGZmOTFiYTA0NGFkIn0sImlhdCI6MTc1MjczMDc2OH0.lZnKdtkVHEzm5yY-SMswGpOz01WWLGrmf7hIjZqYWu8"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"My Title\",\n  \"description\": \"Please wake up early\",\n  \"tag\": \"personal\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "wj-NqohIF9i0Zl60B8Ccj5boiYnJBljpg1074cHThiFjw-qUnpU3jL69MjMQF1GtZtrht2L24mQRQfC9xohQyQ"
+}
