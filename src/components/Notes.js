@@ -38,7 +38,7 @@ const Notes = (props) => {
         props.showAlert("Updated successfully","success");
     }
 
-    const onChange = (e)=>{
+    const onChange = (e)=>{   
       
         setNote({...note, [e.target.name]: e.target.value})
     }
