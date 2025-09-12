@@ -37,10 +37,9 @@ const onChange = (e)=>{
 setCredentials({...credentials, [e.target.name]: e.target.value})
 }
 
-
   return (
     <div className="container mt-2">
-    <h2 className="my-2">Create an account to use INoteBook</h2>
+    <h2 className="my-2">Create An Account To Use INoteBook</h2>
      <form onSubmit={handleSubmit}>
 
             <div className="form-group mb-3">
