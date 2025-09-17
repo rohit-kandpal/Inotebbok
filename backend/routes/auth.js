@@ -31,7 +31,6 @@ router.post('/createuser', [
     return res.status(400).json({success, error:"Sorry a user with this email already exists"})
   }
 
-
   const salt = await bcrypt.genSalt(10);
   const secPass = await bcrypt.hash(req.body.password, salt)
   //create a new user
@@ -58,8 +57,6 @@ router.post('/createuser', [
   }
  }) 
  
-
-
 // ROUTE:2 Authenticate a user: POST "/api/auth/login" . No login required
   router.post('/login', [ 
   body('email','Enter a valid email').isEmail(),
