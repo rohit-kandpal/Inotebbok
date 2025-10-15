@@ -37,7 +37,7 @@ router.post('/addnote', fetchuser, [
 
      } catch(error)  {
          console.error(error.message);
-         res.status(500).send("Internal Server error");
+         res.status(500).send("Internal server error");
      }
 })
 
@@ -83,12 +83,6 @@ router.delete('/deletenote/:id', fetchuser, async (req, res)=> {
         return res.status(401).send("Not Allowed");
      }
       
-    //  note = await Note.findByIdAndDelete(req.params.id) 
-    //  res.json({"success":"Note has been deleted", note: note});
-    // } catch (error){
-    //     console.error(error.message)
-    //     res.status(500).send ("Internal server error");
-    // }
     
        note = await Note.findByIdAndDelete(req.params.id)
        res.json({"success": "Note has been deleted", note: note});
