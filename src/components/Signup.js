@@ -7,8 +7,8 @@ const Signup = (props) => {
    const [credentials, setCredentials] = useState({ name:"", cpassword:"",  email:"", password:""})
    const navigate = useNavigate();
 
-   const handleSubmit= async(e)=>{
-   e.preventDefault();
+    const handleSubmit= async(e)=>{
+    e.preventDefault();
     const {name, email, password}  = credentials;
     const response = await fetch("http://localhost:5000/api/auth/createuser",{
     method: 'POST',
@@ -20,8 +20,8 @@ const Signup = (props) => {
 
   const json = await response.json()
   console.log(json);
-  
-  if (json.success){
+   
+  if (json.successs){
 
     //save the auth token and redirect
       localStorage.setItem('token', json.authtoken);
@@ -29,7 +29,7 @@ const Signup = (props) => {
       props.showAlert("Account created successfully","success")
   }
   else {
-    props.showAlert("Invalid details", "danger")
+    props.showAlert("Invalid Details", "danger")
   }
  }
    
@@ -39,7 +39,7 @@ setCredentials({...credentials, [e.target.name]: e.target.value})
 
   return (
     <div className="container mt-2">
-    <h2 className="my-2">Create An Account</h2>
+    <h2 className="my-2">Create an Account</h2>
      <form onSubmit={handleSubmit}>
 
             <div className="form-group mb-3">
