@@ -75,7 +75,7 @@ const notesInitial = [
     method: 'GET',
     headers:  {
         'Content-Type': 'application/json',
-        "auth-token" : localStorage.getItem('token')
+        "auth-token" : localStorage.getitem('token')
     }
   });
 
@@ -102,7 +102,6 @@ const notesInitial = [
   setNotes(notes.concat(note))  
 
   }
-
 
   //Delete a Note
   const deleteNote = async (id)=>{
@@ -137,21 +136,33 @@ const notesInitial = [
      body: JSON.stringify({title, description, tag})
   });
 
+
     const json = await response.json();
     console.log(json)
      
-     
-   let newNotes = JSON.parse(JSON.stringify(notes))
-   //Logic to edit in client
-   for (let index = 0; index < newNotes.length; index++) {
-    const element = newNotes[index];
-    if(element._id === id) {
+     let newNotes = JSON.parse(JSON.stringify(notes))
+      //Logic to edit in the client
+     for (let index = 0; index < newNotes.length; index ++){
+       const element = newNotes[index];
+       if(element.id === id) {
         newNotes[index].title = title;
-        newNotes[index].description = description;
-        newNotes[index].tag = tag; 
+        newNotes[index].description= description;
+        newNotes[index].tag= tag;
         break;
-    }
-   }
+       }
+     }
+
+  //  let newNotes = JSON.parse(JSON.stringify(notes))
+  //  //Logic to Edit in client
+  //  for (let index = 0; index < newNotes.length; index++) {
+  //   const element = newNotes[index];
+  //   if(element._id === id) {
+  //       newNotes[index]. title= title;
+  //       newNotes[index]. description= description;
+  //       newNotes[index]. tag= tag; 
+  //       break;
+  //   }
+  //  }
 
      //console.log(notes);
      setNotes(newNotes);

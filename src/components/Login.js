@@ -19,11 +19,12 @@ const handleSubmit= async(e)=>{
   const json = await response.json()
   console.log(json);
   if (json.success){
-     //save the auth token and redirect
+     //save the aauthtoken and redirect it 
       localStorage.setItem('token', json.authtoken);     
-      props.showAlert("Logged in  successfully","success")
+      props.showAlert("Logged in successfully","success")
       navigate("/");
   }
+
   else {
     props.showAlert("invalid credentials", "danger")
   }

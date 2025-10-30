@@ -26,10 +26,11 @@ const JWT_SECRET = 'Ayushisagoodb$oy';
   }
 
  try{
-  //Check whether the user with this email exist already
+   
+  //check whether the email with this user already exist or not..
   let user = await User.findOne({email:req.body.email});
   if(user){
-    return res.status(400).json({success, error:"Sorry a user with this email already exists"})
+    return res.status(400).json({success, error:"Sorry a email with this user already exist"})
   }
 
   const salt = await bcrypt.genSalt(10);
@@ -62,7 +63,7 @@ const JWT_SECRET = 'Ayushisagoodb$oy';
 // ROUTE:2 Authenticate a user: POST "/api/auth/login" . No login required
 
   router.post('/login', [ 
-  body('email','Enter a valid email').isEmail(),
+  body('email','Enter a valid email ').isEmail(),
   body('password','Password cannot be blank').exists(),
  ] ,async (req, res)=>{
    let success = false;
@@ -78,13 +79,12 @@ const JWT_SECRET = 'Ayushisagoodb$oy';
      let user = await User.findOne({email});
      if(!user){
        success = false;
-       return res.status(400).json({error: "plaese try to login with correct Credentials"})
+       return res.status(400).json({error: "Please try to login with correct credentials"})
      }
 
      const passwordCompare = await bcrypt.compare(password, user.password);
      if(!passwordCompare){
        success = false;
-       return res.status(400).json({ success, error: "Please try to Login with correct Credentials"})
      } 
 
      const data = {
@@ -98,7 +98,7 @@ const JWT_SECRET = 'Ayushisagoodb$oy';
 
   } catch (error) {
     console.error(error.message);
-    res.status(500).send("Internal Server Error");
+    res.status(500).send("Internal server error");
   }
 
  })
@@ -108,14 +108,13 @@ const JWT_SECRET = 'Ayushisagoodb$oy';
   router.post('/getuser', fetchuser,  async (req, res) => {
   try {
     const userId = req.user.id;
-    const user = await User.findById(userId).select("-passsword")
+    const user = await User.findById(userId).select("-password")
     res.send(user)
   } catch (error) {
-    console.error(error.message);
+    console.error(error.meassage);
     res.status(500).send("Internal server error");
   }
-
 })
 
 
-module.exports = router  
+module.exports = router
