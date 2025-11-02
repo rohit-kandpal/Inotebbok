@@ -26,7 +26,7 @@ const handleSubmit= async(e)=>{
   }
 
   else {
-    props.showAlert("invalid credentials", "danger")
+    props.showAlert("invalid credentials", "warning")
   }
   }
     

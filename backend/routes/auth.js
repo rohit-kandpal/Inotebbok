@@ -15,7 +15,7 @@ const JWT_SECRET = 'Ayushisagoodb$oy';
   router.post('/createuser', [ 
   body('name','Enter a valid name').isLength({min:3}),
   body('email','Enter a valid email').isEmail(),
-  body('password','Password must be alteast 5 characters').isLength({min:5}),
+  body('password','Password must be alteast 5 characters').isLength({min:6}),
  ] ,async (req, res)=>{
   let success = false;
 
@@ -79,7 +79,7 @@ const JWT_SECRET = 'Ayushisagoodb$oy';
      let user = await User.findOne({email});
      if(!user){
        success = false;
-       return res.status(400).json({error: "Please try to login with correct credentials"})
+       return res.status(400).json({error: "Try to login with correct Credentials"})
      }
 
      const passwordCompare = await bcrypt.compare(password, user.password);
@@ -104,7 +104,7 @@ const JWT_SECRET = 'Ayushisagoodb$oy';
  })
 
  // ROUTE:3 GET loggedin User details using : POST "/api/auth/getuser" . login required
-
+ // Give password also
   router.post('/getuser', fetchuser,  async (req, res) => {
   try {
     const userId = req.user.id;

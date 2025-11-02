@@ -29,7 +29,7 @@ const Signup = (props) => {
   }
 
   else {
-    props.showAlert("Invalid Details", "danger") //  bootstrap colour code danger warning and soo onn..
+    props.showAlert("Invalid Details", "success") //  bootstrap colour code danger warning and soo onn..
   }
 
  }
